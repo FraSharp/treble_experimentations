@@ -63,6 +63,7 @@ ROM types:
   slim-oreo
   graphene9
   graphene10
+  aurora
 
 Variants are dash-joined combinations of (in order):
 * processor type
@@ -281,6 +282,14 @@ function get_rom_type() {
                 mainbranch="pie"
                 localManifestBranch="android-9.0"
                 treble_generate="aosmp"
+                extra_make_options="WITHOUT_CHECK_API=true"
+                jack_enabled="false"
+                ;;
+	    aurora)
+                mainrepo="https://github.com/Aurora-Rom/manifest.git"
+                mainbranch="australis"
+                localManifestBranch="android-11.0"
+                treble_generate="aurora"
                 extra_make_options="WITHOUT_CHECK_API=true"
                 jack_enabled="false"
                 ;;

@@ -64,6 +64,7 @@ ROM types:
   graphene9
   graphene10
   aurora
+  evolutionx
 
 Variants are dash-joined combinations of (in order):
 * processor type
@@ -285,6 +286,14 @@ function get_rom_type() {
                 extra_make_options="WITHOUT_CHECK_API=true"
                 jack_enabled="false"
                 ;;
+	    evolutionx)
+                mainrepo="https://github.com/Evolution-X/manifest.git"
+                mainbranch="ten"
+                localManifestBranch="android-10.0"
+                treble_generate="evox"
+                extra_make_options="WITHOUT_CHECK_API=true"
+                jack_enabled="false"
+                ;;
 	    aurora)
                 mainrepo="https://github.com/Aurora-Rom/manifest.git"
                 mainbranch="australis"
@@ -376,7 +385,7 @@ function init_release() {
 }
 
 function init_main_repo() {
-    repo init -u "$mainrepo" -b "$mainbranch"
+    repo init --depth=1 -u "$mainrepo" -b "$mainbranch"
 }
 
 function clone_or_checkout() {
@@ -438,7 +447,7 @@ function init_patches() {
 }
 
 function sync_repo() {
-    repo sync -c -j "$jobs" -f --force-sync --no-tag --no-clone-bundle --optimized-fetch --prune
+    repo sync -c -j200 -f --force-sync --no-tag --no-clone-bundle --optimized-fetch --prune
 }
 
 function patch_things() {

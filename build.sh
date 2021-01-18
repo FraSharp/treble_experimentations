@@ -69,35 +69,35 @@ if [ "$1" = "android-11.0" ];then
     )
 
     # ARM64 vanilla {ab, a-only, ab vndk lite}
-	buildVariant treble_arm64_bvS-userdebug roar-arm64-ab-vanilla
+	buildVariant treble_arm64_bvN-userdebug roar-arm64-ab-vanilla
     ( cd sas-creator; bash run.sh 64 ; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm64-aonly-vanilla.img.xz)
     ( cd sas-creator; bash lite-adapter.sh 64; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm64-ab-vndklite-vanilla.img.xz )
 
     # ARM64 floss {ab, a-only, ab vndk lite}
-	buildVariant treble_arm64_bfS-userdebug roar-arm64-ab-floss
-    ( cd sas-creator; bash run.sh 64 ; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm64-aonly-floss.img.xz)
-    ( cd sas-creator; bash lite-adapter.sh 64; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm64-ab-vndklite-floss.img.xz )
+	# buildVariant treble_arm64_bfS-userdebug roar-arm64-ab-floss
+    # ( cd sas-creator; bash run.sh 64 ; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm64-aonly-floss.img.xz)
+    # ( cd sas-creator; bash lite-adapter.sh 64; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm64-ab-vndklite-floss.img.xz )
 
     # ARM32 vanilla {ab, a-only}
-	buildVariant treble_arm_bvS-userdebug roar-arm-ab-vanilla
-    ( cd sas-creator; bash run.sh 32; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm-aonly-vanilla.img.xz )
+	# buildVariant treble_arm_bvS-userdebug roar-arm-ab-vanilla
+    # ( cd sas-creator; bash run.sh 32; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm-aonly-vanilla.img.xz )
 
     # ARM32_binder64 vanilla {ab, ab vndk lite}
-	buildVariant treble_a64_bvS-userdebug roar-arm32_binder64-ab-vanilla
+	buildVariant treble_a64_bvN-userdebug roar-arm32_binder64-ab-vanilla
     ( cd sas-creator; bash lite-adapter.sh 32; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm32_binder64-ab-vndklite-vanilla.img.xz)
 
     # ARM64 Gapps {ab, a-only, ab vndk lite}
-	buildVariant treble_arm64_bgS-userdebug roar-arm64-ab-gapps
-    ( cd sas-creator; bash run.sh 64 ; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm64-aonly-gapps.img.xz)
-    ( cd sas-creator; bash lite-adapter.sh 64; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm64-ab-vndklite-gapps.img.xz )
+	# buildVariant treble_arm64_bgS-userdebug roar-arm64-ab-gapps
+    # ( cd sas-creator; bash run.sh 64 ; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm64-aonly-gapps.img.xz)
+    # ( cd sas-creator; bash lite-adapter.sh 64; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm64-ab-vndklite-gapps.img.xz )
 
     # ARM32_binder64 go gapps {ab, ab vndk lite}
-	buildVariant treble_a64_boS-userdebug roar-arm32_binder64-ab-gogapps
-    ( cd sas-creator; bash lite-adapter.sh 32; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm32_binder64-ab-vndklite-gogapps.img.xz )
+	#buildVariant treble_a64_boS-userdebug roar-arm32_binder64-ab-gogapps
+    # ( cd sas-creator; bash lite-adapter.sh 32; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm32_binder64-ab-vndklite-gogapps.img.xz )
 
     # ARM32_binder64 gapps {ab, ab vndk lite}
-	buildVariant treble_a64_bgS-userdebug roar-arm32_binder64-ab-gapps
-    ( cd sas-creator; bash lite-adapter.sh 32; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm32_binder64-ab-vndklite-gapps.img.xz )
+	# buildVariant treble_a64_bgS-userdebug roar-arm32_binder64-ab-gapps
+    # ( cd sas-creator; bash lite-adapter.sh 32; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm32_binder64-ab-vndklite-gapps.img.xz )
 elif [ "$1" = "android-10.0" ];then
 	buildVariant treble_arm64_afS-userdebug quack-arm64-aonly-floss
 	buildVariant treble_arm64_avS-userdebug quack-arm64-aonly-vanilla

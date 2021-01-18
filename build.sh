@@ -33,13 +33,13 @@ if [ "$release" == true ];then
     [ ! -f "$originFolder/release/config.ini" ] && exit 1
 fi
 
-repo init -u "$manifest_url" -b $aosp
+repo init --depth=1 -u "$manifest_url" -b $aosp
 if [ -d .repo/local_manifests ] ;then
 	( cd .repo/local_manifests; git fetch; git reset --hard; git checkout origin/$phh)
 else
 	git clone https://github.com/phhusson/treble_manifest .repo/local_manifests -b $phh
 fi
-repo sync -c -j 1 --force-sync
+repo sync -c -j200 --force-sync
 
 repo forall -r '.*opengapps.*' -c 'git lfs fetch && git lfs checkout'
 (cd device/phh/treble; git clean -fdx; bash generate.sh)

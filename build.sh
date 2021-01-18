@@ -98,7 +98,7 @@ if [ "$1" = "android-11.0" ];then
     # ARM32_binder64 gapps {ab, ab vndk lite}
 	# buildVariant treble_a64_bgS-userdebug roar-arm32_binder64-ab-gapps
     # ( cd sas-creator; bash lite-adapter.sh 32; xz -c s.img -T0 > ../release/$rom_fp/system-roar-arm32_binder64-ab-vndklite-gapps.img.xz )
-elif [ "$1" = "android-10.0" ];then
+<< ' elif [ "$1" = "android-10.0" ];then
 	buildVariant treble_arm64_afS-userdebug quack-arm64-aonly-floss
 	buildVariant treble_arm64_avS-userdebug quack-arm64-aonly-vanilla
 	buildVariant treble_arm64_agS-userdebug quack-arm64-aonly-gapps
@@ -144,6 +144,7 @@ else
 	buildVariant treble_a64_bgS-userdebug arm32_binder64-ab-gapps-su
 	fi
 	rm -Rf out/target/product/phhgsi*
+	'>>
 fi
 
 if [ "$release" == true ];then

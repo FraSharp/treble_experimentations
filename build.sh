@@ -10,19 +10,19 @@ if [ -z "$USER" ];then
 fi
 export LC_ALL=C
 
-manifest_url="https://android.googlesource.com/platform/manifest"
-aosp="android-8.1.0_r65"
-phh="android-8.1"
+#manifest_url="https://android.googlesource.com/platform/manifest"
+#aosp="android-8.1.0_r65"
+#phh="android-8.1"
 
-if [ "$1" == "android-9.0" ];then
-    manifest_url="https://gitlab.com/aosp-security/manifest"
-    aosp="android-9.0.0_r53-r47"
-    phh="android-9.0"
-elif [ "$1" == "android-10.0" ];then
-    manifest_url="https://android.googlesource.com/platform/manifest"
-    aosp="android-10.0.0_r41"
-    phh="android-10.0"
-elif [ "$1" == "android-11.0" ];then
+#if [ "$1" == "android-9.0" ];then
+    #manifest_url="https://gitlab.com/aosp-security/manifest"
+    #aosp="android-9.0.0_r53-r47"
+    #phh="android-9.0"
+#elif [ "$1" == "android-10.0" ];then
+    #manifest_url="https://android.googlesource.com/platform/manifest"
+    #aosp="android-10.0.0_r41"
+    #phh="android-10.0"
+if [ "$1" == "android-11.0" ];then
     manifest_url="https://android.googlesource.com/platform/manifest"
     aosp="android-11.0.0_r27"
     phh="android-11.0"
